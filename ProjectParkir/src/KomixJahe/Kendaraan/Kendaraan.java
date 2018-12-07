@@ -9,9 +9,9 @@ package KomixJahe.Kendaraan;
  *
  * @author ASUS 10.1
  */
-public class Kendaraan {
+public abstract class Kendaraan {
     protected String noPolisi;
-    private String namaKendaraan;
+    protected String namaKendaraan;
     public Kendaraan(String noPolisi) {
         this.noPolisi = noPolisi;
     }
