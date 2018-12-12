@@ -10,20 +10,20 @@ package KomixJahe.User;
  * @author ASUS 10.1
  */
 public class User {
-    protected String id; 
+    protected String username; 
     protected String password;
     
-    public User(String id,String password) {
-        this.id = id;
+    public User(String username,String password) {
+        this.username = username;
         this.password=password;
     }
 
     public String getId() {
-        return id;
+        return username;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.username = username;
     }
 
     public String getPassword() {
