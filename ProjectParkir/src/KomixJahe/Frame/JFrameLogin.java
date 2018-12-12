@@ -122,12 +122,10 @@ public class JFrameLogin extends javax.swing.JFrame {
         if(jTextFieldAdminUsernName.getText().equals("admin")){
             if(jPasswordAdminPassword.getText().equals("admin")){  
                 JOptionPane.showMessageDialog(null,"Login Berhasil");
-            }else{
-                JOptionPane.showMessageDialog(null,"Username Salah");
             }
-            }else{
-                JOptionPane.showMessageDialog(null,"Password Salah");
-        }
+        }else{
+         JOptionPane.showMessageDialog(null,"Username Salah atau Password Salah");
+        }         
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
