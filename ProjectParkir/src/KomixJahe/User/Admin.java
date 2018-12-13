@@ -9,28 +9,14 @@ package KomixJahe.User;
  *
  * @author ASUS 10.1
  */
-public class Operator extends User {
+public class Admin extends User{
     private String nama;
     private String jenisKelamin;
     
-    public Operator(String username, String password) {
+    public Admin(String nama, String jenisKelamin, String username, String password) {
         super(username, password);
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+        this.nama = nama;
+        this.jenisKelamin = jenisKelamin;
     }
 
     public String getNama() {
@@ -48,5 +34,20 @@ public class Operator extends User {
     public void setJenisKelamin(String jenisKelamin) {
         this.jenisKelamin = jenisKelamin;
     }
-    
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

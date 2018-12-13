@@ -10,10 +10,12 @@ package KomixJahe.Kendaraan;
  * @author ASUS 10.1
  */
 public abstract class Kendaraan {
+    protected String noParkir;
     protected String noPolisi;
-    protected String namaKendaraan;
-    public Kendaraan(String noPolisi) {
+    
+    public Kendaraan(String noParkir,String noPolisi) {
         this.noPolisi = noPolisi;
+        this.noParkir=noParkir;
     }
 
     public String getNoPolisi() {
@@ -22,6 +24,14 @@ public abstract class Kendaraan {
 
     public void setNoPolisi(String noPolisi) {
         this.noPolisi = noPolisi;
+    }
+
+    public String getNoParkir() {
+        return noParkir;
+    }
+
+    public void setNoParkir(String noParkir) {
+        this.noParkir = noParkir;
     }
     
     

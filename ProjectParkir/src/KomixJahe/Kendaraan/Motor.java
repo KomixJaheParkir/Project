@@ -12,8 +12,8 @@ package KomixJahe.Kendaraan;
 public class Motor extends Kendaraan{
     private String namaKendaraan;
     
-    public Motor(String noPolisi,String namaKendaraan) {
-        super(noPolisi);
+    public Motor(String noParkir,String noPolisi,String namaKendaraan) {
+        super(noParkir,noPolisi);
         this.namaKendaraan=namaKendaraan;
     }
 

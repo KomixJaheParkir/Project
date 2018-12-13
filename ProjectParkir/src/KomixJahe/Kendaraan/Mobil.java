@@ -11,8 +11,9 @@ package KomixJahe.Kendaraan;
  */
 public class Mobil extends Kendaraan{
     private String namaKendaraan;
-    public Mobil(String noPolisi) {
-        super(noPolisi);
+    public Mobil(String noParkir,String noPolisi,String namaKendaraan) {
+        super(noParkir,noPolisi);
+        this.namaKendaraan=namaKendaraan;
     }
      public String getNamaKendaraan() {
         return namaKendaraan;

@@ -5,18 +5,22 @@
  */
 package KomixJahe.Frame;
 
+
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 /**
  *
  * @author ASUS 10.1
  */
-public class JFrameLogin extends javax.swing.JFrame {
+public class JFrameLoginAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrameLogin
      */
-    public JFrameLogin() {
+    public JFrameLoginAdmin() {
+        setTitle("Login Admin");
+        
         initComponents();
     }
 
@@ -30,7 +34,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldAdminUsernName = new javax.swing.JTextField();
+        jTextFieldAdminUserName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
         jButtonReset = new javax.swing.JButton();
@@ -40,9 +44,9 @@ public class JFrameLogin extends javax.swing.JFrame {
 
         jLabel1.setText("PASSWORD");
 
-        jTextFieldAdminUsernName.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldAdminUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAdminUsernNameActionPerformed(evt);
+                jTextFieldAdminUserNameActionPerformed(evt);
             }
         });
 
@@ -89,7 +93,7 @@ public class JFrameLogin extends javax.swing.JFrame {
                                 .addComponent(jButtonReset))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jPasswordAdminPassword, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextFieldAdminUsernName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)))
+                                .addComponent(jTextFieldAdminUserName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)))
                         .addGap(104, 104, 104))))
         );
         layout.setVerticalGroup(
@@ -98,7 +102,7 @@ public class JFrameLogin extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextFieldAdminUsernName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldAdminUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
@@ -113,23 +117,23 @@ public class JFrameLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldAdminUsernNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAdminUsernNameActionPerformed
+    private void jTextFieldAdminUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAdminUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAdminUsernNameActionPerformed
+    }//GEN-LAST:event_jTextFieldAdminUserNameActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
-        if(jTextFieldAdminUsernName.getText().equals("admin")){
-            if(jPasswordAdminPassword.getText().equals("admin")){  
-                JOptionPane.showMessageDialog(null,"Login Berhasil");
-            }
+        if(jTextFieldAdminUserName.getText().equals("admin")&&(jPasswordAdminPassword.getText().equals("admin"))){
+            JOptionPane.showMessageDialog(null,"Login Berhasil");
         }else{
-         JOptionPane.showMessageDialog(null,"Username Salah atau Password Salah");
-        }         
+              JOptionPane.showMessageDialog(null,"Username atau Password Salah");
+           }        
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
-        // TODO add your handling code here:\
+        // TODO add your handling code here:
+        jTextFieldAdminUserName.setText("");
+        jPasswordAdminPassword.setText("");
         
     }//GEN-LAST:event_jButtonResetActionPerformed
 
@@ -154,20 +158,21 @@ public class JFrameLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameLoginAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameLogin().setVisible(true);
+                new JFrameLoginAdmin().setVisible(true);
             }
         });
     }
@@ -178,6 +183,6 @@ public class JFrameLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordAdminPassword;
-    private javax.swing.JTextField jTextFieldAdminUsernName;
+    private javax.swing.JTextField jTextFieldAdminUserName;
     // End of variables declaration//GEN-END:variables
 }
