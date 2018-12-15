@@ -5,6 +5,10 @@
  */
 
 package KomixJahe.Frame;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author ASUS 10.1
@@ -17,8 +21,31 @@ public class JFrameHome extends javax.swing.JFrame {
     public JFrameHome() {
         setTitle("Home");
         initComponents();
+        calender();
     }
-
+    
+    
+    public void calender(){
+      this.setLocationRelativeTo(null);
+        new Thread(){
+           public void run(){
+         while(true){
+          Calendar cal= new GregorianCalendar();
+          int tahun= cal.get(Calendar.YEAR);
+          int bulan= cal.get(Calendar.MONTH)+1;
+          int hari =cal.get(Calendar.DAY_OF_MONTH);
+          int jam =cal.get(Calendar.HOUR_OF_DAY);
+          int menit= cal.get(Calendar.MINUTE);
+          int detik=cal.get(Calendar.SECOND);
+          String tanggal= tahun+"-"+bulan+"-"+hari;
+          String waktu1=jam+":"+menit+":"+detik;
+          String waktu2=jam+"-"+menit+"-"+detik;
+          Tanggal.setText(tanggal);
+          Jam.setText(waktu1);
+      }
+    }
+        }.start();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +61,8 @@ public class JFrameHome extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        Jam = new javax.swing.JLabel();
+        Tanggal = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,15 +91,23 @@ public class JFrameHome extends javax.swing.JFrame {
 
         jLabel1.setText("SELAMAT BEKERJA");
 
+        Jam.setText("jLabel4");
+
+        Tanggal.setText("jLabel5");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel3)
-                .addGap(118, 118, 118)
+                .addGap(135, 135, 135)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 161, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Tanggal)
+                .addGap(18, 18, 18)
+                .addComponent(Jam)
+                .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,7 +116,10 @@ public class JFrameHome extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(Jam)
+                    .addComponent(Tanggal))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,6 +219,8 @@ public class JFrameHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Jam;
+    private javax.swing.JLabel Tanggal;
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonOperator;
     private javax.swing.JLabel jLabel1;
