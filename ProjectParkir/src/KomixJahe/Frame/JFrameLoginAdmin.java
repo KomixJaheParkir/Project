@@ -6,6 +6,7 @@
 package KomixJahe.Frame;
 
 
+import KomixJahe.User.*;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
@@ -14,13 +15,13 @@ import javax.swing.JPasswordField;
  * @author ASUS 10.1
  */
 public class JFrameLoginAdmin extends javax.swing.JFrame {
-
+    User user;
     /**
      * Creates new form JFrameLogin
      */
     public JFrameLoginAdmin() {
         setTitle("Login Admin");
-        
+        this.user=user;
         initComponents();
     }
 
@@ -125,6 +126,9 @@ public class JFrameLoginAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(jTextFieldAdminUserName.getText().equals("admin")&&(jPasswordAdminPassword.getText().equals("admin"))){
             JOptionPane.showMessageDialog(null,"Login Berhasil");
+            JFrameMenuKendaraanKeluar menu= new JFrameMenuKendaraanKeluar();
+            menu.setVisible(true);
+            setVisible(false);
         }else{
               JOptionPane.showMessageDialog(null,"Username atau Password Salah");
            }        
