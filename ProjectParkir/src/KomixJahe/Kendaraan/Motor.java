@@ -12,8 +12,8 @@ package KomixJahe.Kendaraan;
 public class Motor extends Kendaraan{
     private String namaKendaraan;
     
-    public Motor(String noParkir,String noPolisi,String namaKendaraan) {
-        super(noParkir,noPolisi);
+    public Motor(String noKarcis,String noPolisi,String namaKendaraan) {
+        super(noKarcis,noPolisi);
         this.namaKendaraan=namaKendaraan;
     }
 
@@ -25,12 +25,12 @@ public class Motor extends Kendaraan{
         this.namaKendaraan = namaKendaraan;
     }
 
+    @Override
     public String getNoPolisi() {
         return noPolisi;
     }
 
     public void setNoPolisi(String noPolisi) {
         this.noPolisi = noPolisi;
-    }
-    
+    }   
 }
